@@ -39,6 +39,7 @@ public class Usuario implements Serializable{
 	private String contraseña;
 	@Column(name="sobre_mi")
 	private String sobreMi;
+	private String username;
 	@Column(name="id_guia")
 	private Guia guia;
 	@Column(name="id_admin")

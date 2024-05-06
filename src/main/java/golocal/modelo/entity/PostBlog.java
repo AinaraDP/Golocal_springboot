@@ -34,7 +34,6 @@ public class PostBlog implements Serializable{
 	private int idPost;
 	private String titulo;
 	private String contenido;
-	private double valoracion;
 	private String autor;
 	@Column(name="fecha_publi")
 	private Date fechaPubli;
