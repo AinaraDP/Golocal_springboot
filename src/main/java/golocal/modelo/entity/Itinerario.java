@@ -38,6 +38,16 @@ public class Itinerario implements Serializable{
 	private Date fechaDisponible;
 	@Column(name="plazas_max")
 	private String plazasMax;
+	private boolean monte;
+	private boolean playa;
+	private boolean cultura;
+	private boolean gastronomia;
+	private boolean enologico;
+	private boolean ecologico;
+	private boolean nocturno;
+	private boolean relajacion;
+	private boolean rural;
+	private boolean local;
 	@Column(name="id_guia")
 	private Guia guia;
 	@Column(name="id_ciudad")
