@@ -8,7 +8,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -34,10 +38,11 @@ public class Itinerario implements Serializable{
 	private int idItinerario;
 	private String descripcion;
 	private double duracion;
+	@Temporal(TemporalType.DATE)
 	@Column(name="fecha_disponible")
 	private Date fechaDisponible;
 	@Column(name="plazas_max")
-	private String plazasMax;
+	private int plazasMax;
 	private boolean monte;
 	private boolean playa;
 	private boolean cultura;
@@ -48,9 +53,11 @@ public class Itinerario implements Serializable{
 	private boolean relajacion;
 	private boolean rural;
 	private boolean local;
-	@Column(name="id_guia")
+	@ManyToOne
+	@JoinColumn(name="id_guia")
 	private Guia guia;
-	@Column(name="id_ciudad")
+	@ManyToOne
+	@JoinColumn(name="id_ciudad")
 	private Ciudad ciudad;
 	
 	

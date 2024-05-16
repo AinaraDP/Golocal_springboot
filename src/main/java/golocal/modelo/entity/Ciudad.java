@@ -33,7 +33,8 @@ public class Ciudad implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_ciudad")
 	private int idCiudad;
-	private String nombre;
+	@Column(name="nombre")
+	private String nombreCiudad;
 	@ManyToOne
 	@JoinColumn(name="id_pais")
 	private Pais pais;
