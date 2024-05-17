@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -40,11 +42,14 @@ public class Usuario implements Serializable{
 	@Column(name="sobre_mi")
 	private String sobreMi;
 	private String username;
-	@Column(name="id_guia")
-	private Guia guia;
-	@Column(name="id_admin")
+	@OneToOne
+    @JoinColumn(name = "id_usuario", unique = true)
+    private Guia guia;
+	@OneToOne
+    @JoinColumn(name = "id_usuario", unique = true)
 	private Admin admin;
-	@Column(name="id_cliente")
+	@OneToOne
+    @JoinColumn(name = "id_usuario", unique = true)
 	private Cliente cliente;
 
 }
