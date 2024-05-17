@@ -16,7 +16,6 @@ import golocal.service.GuiaService;
 @RequestMapping("/guia")
 public class GuiaRestController {
 
-	
 	@Autowired
 	private GuiaService guiaService;
 	

@@ -51,5 +51,4 @@ public class Usuario implements Serializable{
 	@OneToOne
     @JoinColumn(name = "id_usuario", unique = true)
 	private Cliente cliente;
-
 }

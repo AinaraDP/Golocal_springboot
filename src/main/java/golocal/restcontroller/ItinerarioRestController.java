@@ -31,15 +31,7 @@ public class ItinerarioRestController {
 		return itinerarioService.findAll();
 	}
 	
-<<<<<<< HEAD
-	@GetMapping("/porBusqueda/{nombreCiudad}/{nombrePais}/{fechaDisponible}")
-    public List<Itinerario> obtenerItinerariosPorCiudadPaisYFecha(
-            @PathVariable("nombreCiudad") String nombreCiudad,
-            @PathVariable("nombrePais") String nombrePais,
-            @PathVariable("fechaDisponible")@DateTimeFormat(pattern="yyyy-MM-dd") Date fechaDisponible) {
-        return itinerarioRepository.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
-    }
-=======
+
 	@GetMapping("/todos/{nombrePais}/{nombreCiudad}/{fechaDisponible}")
 	public List<Itinerario> obtenerItinerariosPorCiudadPaisYFecha(
 	        @PathVariable("nombreCiudad") String nombreCiudad,
@@ -47,7 +39,5 @@ public class ItinerarioRestController {
 	        @PathVariable("fechaDisponible") @DateTimeFormat(pattern="yyyy-MM-dd") Date fechaDisponible) {
 	    return itinerarioRepository.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
 	}
-
->>>>>>> d7df1627fe1887d8ff56b40cc5b2ceadfbe036e6
 
 }
