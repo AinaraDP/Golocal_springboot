@@ -23,8 +23,8 @@ public class ItinerarioServiceImplMy8Jpa implements ItinerarioService{
 
 	@Override
 	public List<Itinerario> findByCiudadPaisYFecha(String nombreCiudad, String nombrePais, Date fechaDisponible) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return itinerarioRepository.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
 	}
 
 }
