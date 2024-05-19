@@ -106,19 +106,85 @@ INSERT INTO Pueblos (id_ciudad, nombre) VALUES
 
 
 ALTER TABLE Itinerarios AUTO_INCREMENT = 1;
--- Insertar datos en la tabla Itinerarios
+-- Itinerarios para Barcelona
 INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
-(1, 1, 'Recorrido por el casco antiguo de Barcelona', 2.5, '2024-06-15', 15, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1),
-(2, 2, 'Tour por el Museo del Prado y el Parque del Retiro', 3, '2024-06-20', 20, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
-(3, 3, 'Visita a la Torre Eiffel y el Louvre', 4, '2024-07-01', 25, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1),
-(2, 4, 'Ruta gastronómica por Roma', 2, '2024-07-05', 12, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1),
-(1, 5, 'Descubre la historia de Berlín', 3.5, '2024-07-10', 18, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
-(3, 6, 'Tour por los barrios históricos de Lisboa', 3, '2024-07-15', 22, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1),
-(3, 7, 'Explorando la modernidad de Tokio', 4, '2024-07-20', 30, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1),
-(1, 8, 'Ruta histórica por Moscú', 3, '2024-07-25', 20, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
-(1, 9, 'Descubre la antigua Atenas', 3.5, '2024-08-01', 25, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1),
-(1, 10, 'Cultura y tango en Buenos Aires', 2.5, '2024-08-05', 15, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1);
+(1, 1, 'Recorrido por el casco antiguo de Barcelona', 2.5, '2024-06-15', 15, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0),
+(2, 1, 'Visita a la Sagrada Familia y el Parque Güell', 3, '2024-06-15', 20, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1),
+(3, 1, 'Paseo en bicicleta por la costa de Barcelona', 4, '2024-06-15', 25, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1),
+(4, 1, 'Tour de tapas por el Barrio Gótico', 2, '2024-06-15', 12, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1);
 
+-- Itinerarios para Madrid
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 2, 'Recorrido por el Madrid de los Austrias', 3, '2024-06-20', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0),
+(2, 2, 'Visita al Museo del Prado y el Parque del Retiro', 3.5, '2024-06-20', 20, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1),
+(3, 2, 'Tour en Segway por los principales monumentos', 4, '2024-06-20', 25, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1),
+(4, 2, 'Ruta de compras por el Barrio de Salamanca', 2.5, '2024-06-20', 12, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0);
+
+-- Itinerarios para París
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 3, 'Visita a la Torre Eiffel y el Museo del Louvre', 3, '2024-07-01', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0),
+(2, 3, 'Paseo en barco por el río Sena al atardecer', 3.5, '2024-07-01', 20, 0, 1, 1, 0, 0, 0, 0, 0, 10, 1),
+(3, 3, 'Cata de vinos y quesos en una bodega parisina', 4, '2024-07-01', 25, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0),
+(4, 3, 'Espectáculo de cabaret en el Moulin Rouge', 2.5, '2024-07-01', 12, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0);
+
+-- Itinerarios para Roma
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 4, 'Tour por el Coliseo y el Foro Romano', 3, '2024-07-05', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0),
+(2, 4, 'Visita al Vaticano y la Capilla Sixtina', 3.5, '2024-07-05', 20, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1),
+(3, 4, 'Paseo en Vespa por las calles de Roma', 4, '2024-07-05', 25, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1),
+(4, 4, 'Degustación de pasta fresca en una trattoria romana', 2.5, '2024-07-05', 12, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0);
+
+-- Itinerarios para Berlín
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 5, 'Recorrido por el Muro de Berlín y la Puerta de Brandeburgo', 3, '2024-08-18', 15, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
+(2, 5, 'Visita al Museo de la DDR y el Checkpoint Charlie', 3.5, '2024-08-18', 20, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1),
+(3, 5, 'Paseo en bicicleta por los parques de Berlín', 4, '2024-08-18', 25, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 5, 'Tour de cerveza artesanal por los bares de Berlín', 2.5, '2024-07-05', 12, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1);
+
+-- Itinerarios para Lisboa
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 6, 'Recorrido por el Barrio de Alfama y el Castillo de San Jorge', 3, '2024-08-22', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(2, 6, 'Visita al Monasterio de los Jerónimos y la Torre de Belém', 3.5, '2024-08-22', 20, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1),
+(3, 6, 'Paseo en tranvía por las colinas de Lisboa', 4, '2024-08-22', 25, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
+(4, 6, 'Cata de vinos portugueses en una bodega de Lisboa', 2.5, '2024-08-22', 12, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1);
+
+-- Itinerarios para Tokio
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 7, 'Recorrido por el Templo Senso-ji y el barrio de Asakusa', 3, '2024-09-15', 15, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(2, 7, 'Visita al barrio de Harajuku y el Santuario Meiji', 3.5, '2024-09-15', 20, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1),
+(3, 7, 'Paseo en barco por la bahía de Tokio al atardecer', 4, '2024-09-15', 25, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 7, 'Cena en un restaurante con estrellas Michelin en Roppongi', 2.5, '2024-09-15', 12, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1);
+
+-- Itinerarios para Moscú
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 8, 'Recorrido por la Plaza Roja y el Kremlin', 3, '2024-09-03', 15, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
+(2, 8, 'Visita al Museo Estatal de Historia y la Catedral de San Basilio', 3.5, '2024-09-03', 20, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1),
+(3, 8, 'Paseo en barco por el río Moscova', 4, '2024-09-03', 25, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 8, 'Tour nocturno por los teatros y la vida cultural de Moscú', 2.5, '2024-09-03', 12, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1);
+
+-- Itinerarios para Atenas
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 9, 'Recorrido por la Acrópolis y el Partenón', 3, '2024-06-01', 15, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0),
+(2, 9, 'Visita al Museo Arqueológico Nacional y el Ágora Antigua', 3.5, '2024-06-01', 20, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1),
+(3, 9, 'Paseo en bicicleta por la costa de Atenas', 4, '2024-06-01', 25, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 9, 'Cata de vinos griegos en una taberna tradicional', 2.5, '2024-07-05', 12, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1);
+
+-- Itinerarios para Buenos Aires
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 10, 'Recorrido por la Casa Rosada y el barrio de San Telmo', 3, '2024-08-30', 15, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
+(2, 10, 'Visita al Teatro Colón y la Avenida 9 de Julio', 3.5, '2024-08-30', 20, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1),
+(3, 10, 'Paseo en barco por el Río de la Plata al atardecer', 4, '2024-08-30', 25, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 10, 'Cena con espectáculo de tango en un restaurante tradicional', 2.5, '2024-08-30', 12, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1);
+
+-- Itinerarios para Monterrey
+INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_disponible, plazas_max, monte, playa, cultura, gastronomia, enologico, ecologico, nocturno, relajacion, rural, local) VALUES 
+(1, 11, 'Recorrido por el Paseo Santa Lucía y el Barrio Antiguo', 3, '2024-09-07', 15, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),
+(2, 11, 'Visita al Museo de Historia Mexicana y el Mirador Asta Bandera', 3.5, '2024-09-07', 20, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0),
+(3, 11, 'Paseo en teleférico por el Cerro de la Silla', 4, '2024-09-07', 25, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1),
+(4, 11, 'Cena en un restaurante con vista panorámica de la ciudad', 2.5, '2024-09-07', 12, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1);
+
+
+/*
 ALTER TABLE Reservas AUTO_INCREMENT = 1;
 -- Insertar datos en la tabla Reservas
 INSERT INTO Reservas (id_itinerario, id_cliente, fecha) VALUES 
@@ -133,7 +199,9 @@ INSERT INTO Reservas (id_itinerario, id_cliente, fecha) VALUES
 (9, 2, '2024-08-01'),
 (10, 1, '2024-08-05');
 
+*/
 
+/*
 ALTER TABLE Reseñas AUTO_INCREMENT = 1;
 -- Insertar datos en la tabla Reseñas
 INSERT INTO Reseñas (id_itinerario, id_cliente, id_guia, puntuacion, fecha, contenido) VALUES 
@@ -147,3 +215,4 @@ INSERT INTO Reseñas (id_itinerario, id_cliente, id_guia, puntuacion, fecha, con
 (8, 1, 3, 4.7, '2024-07-25', 'Disfruté mucho la visita, aprendí mucho.'),
 (9, 3, 4, 4.2, '2024-08-01', 'Buena experiencia, aunque esperaba más lugares para visitar.'),
 (10, 2, 4, 4.9, '2024-08-05', 'Excelente recorrido, el guía fue muy profesional.');
+*/
