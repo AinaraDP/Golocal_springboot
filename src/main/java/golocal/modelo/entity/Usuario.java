@@ -42,13 +42,4 @@ public class Usuario implements Serializable{
 	@Column(name="sobre_mi")
 	private String sobreMi;
 	private String username;
-	@OneToOne
-    @JoinColumn(name = "id_usuario", unique = true)
-    private Guia guia;
-	@OneToOne
-    @JoinColumn(name = "id_usuario", unique = true)
-	private Admin admin;
-	@OneToOne
-    @JoinColumn(name = "id_usuario", unique = true)
-	private Cliente cliente;
 }

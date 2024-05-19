@@ -26,8 +26,7 @@ public class FilterChainConfiguration {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(authorize -> authorize.requestMatchers("/static/**").permitAll()
-						.requestMatchers("/login", "/logout").permitAll().requestMatchers("/rest/encriptar/**")
-
+						.requestMatchers("/login", "/logout", "/**").permitAll().requestMatchers("/rest/encriptar/**")
 						.authenticated())
 				.formLogin(form -> form.loginPage("/login").permitAll())
 				.logout((logout) -> logout.logoutSuccessUrl("/"));

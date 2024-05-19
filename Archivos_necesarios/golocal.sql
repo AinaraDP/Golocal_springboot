@@ -1,27 +1,8 @@
 create database go_local;
 use go_local;
 
-CREATE TABLE `Admins` (
-id_admin int NOT NULL AUTO_INCREMENT,
-PRIMARY KEY (id_admin)
-);
-
-CREATE TABLE `Guias` (
-id_guia int NOT NULL AUTO_INCREMENT,
-idioma varchar (25),
-PRIMARY KEY (id_guia)
-);
-
-CREATE TABLE `Clientes` (
-id_cliente int NOT NULL AUTO_INCREMENT,
-PRIMARY KEY (id_cliente)
-);
-
 CREATE TABLE `Usuarios` (
 id_usuario int NOT NULL AUTO_INCREMENT,
-id_guia int, 
-id_admin int,
-id_cliente int,
 dni char (9) NOT NULL,
 nombre varchar (50) NOT NULL,
 username varchar(50) NOT NULL,
@@ -29,11 +10,30 @@ apellidos varchar (50) NOT NULL,
 email varchar (50) NOT NULL,
 telefono int NOT NULL,
 contraseña varchar (25) NOT NULL,
-sobre_mi varchar (150),
-PRIMARY KEY (id_usuario),
-FOREIGN KEY (id_guia) REFERENCES `Guias`(id_guia),
-FOREIGN KEY (id_admin) REFERENCES `Admins`(id_admin),
-FOREIGN KEY (id_cliente) REFERENCES `Clientes`(id_cliente)
+sobre_mi varchar (500),
+PRIMARY KEY (id_usuario)
+);
+
+CREATE TABLE `Admins` (
+id_admin int NOT NULL AUTO_INCREMENT,
+id_usuario int,
+PRIMARY KEY (id_admin),
+FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario)
+);
+
+CREATE TABLE `Guias` (
+id_guia int NOT NULL AUTO_INCREMENT,
+idioma varchar (25),
+id_usuario int,
+PRIMARY KEY (id_guia),
+FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario)
+);
+
+CREATE TABLE `Clientes` (
+id_cliente int NOT NULL AUTO_INCREMENT,
+id_usuario int,
+PRIMARY KEY (id_cliente),
+FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario)
 );
 
 CREATE TABLE `Post_blog` (
@@ -118,17 +118,8 @@ FOREIGN KEY (id_cliente) REFERENCES `Clientes`(id_cliente),
 FOREIGN KEY (id_guia) REFERENCES `Guias`(id_guia)
 );
 
-create user u_golocal_BBDD identified by 'ugolocal';
-grant all privileges on go_local.* to u_golocal_BBDD;
+-- create user u_golocal_BBDD identified by 'ugolocal';
+-- grant all privileges on go_local.* to u_golocal_BBDD;
 
 
 -- DROP DATABASE go_local;
-
--- DROP USER golocal_BBDD;
-
-
-
-
-
-
-
