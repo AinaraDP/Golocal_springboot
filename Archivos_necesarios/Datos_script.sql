@@ -14,17 +14,17 @@ INSERT INTO Guias (id_guia, idioma) VALUES
 
 ALTER TABLE Usuarios AUTO_INCREMENT = 1;
 -- Insertar datos en la tabla Usuarios
-INSERT INTO Usuarios (id_usuario, id_guia, id_admin, id_cliente, dni, nombre, username, apellidos, email, telefono, contraseña, sobre_mi) VALUES 
-(1,1,null,null,'12345678A', 'Juan', 'juanperez', 'Perez', 'juan@example.com', 123456789, 'contraseña1', 'Soy un guía turístico experimentado.'),
-(2,null,1,null,'98765432B', 'María', 'mariagarcia', 'García', 'maria@example.com', 987654321, 'contraseña2', 'Me encanta compartir mi conocimiento sobre historia y cultura.'),
-(3,null,null,1,'11111111A', 'Pedro', 'pedrolopez', 'Lopez', 'pedro@example.com', 111111111, 'contraseña3', 'Disfruto explorando nuevas culturas.'),
-(4,2,null,null,'22222222B', 'Ana', 'anagomez', 'Gómez', 'ana@example.com', 222222222, 'contraseña4', 'Apasionada por la gastronomía local.'),
-(5,null,2,null,'33333333C', 'Luis', 'luisrodriguez', 'Rodríguez', 'luis@example.com', 333333333, 'contraseña5', 'Me encanta planificar nuevas aventuras.'),
-(6,null,null,2,'44444444D', 'Laura', 'lauraramirez', 'Ramírez', 'laura@example.com', 444444444, 'contraseña6', 'Experta en rutas culturales.'),
-(7,null,3,null,'55555555E', 'Carlos', 'carlosfernandez', 'Fernández', 'carlos@example.com', 555555555, 'contraseña7', 'Aventurero y amante de la naturaleza.'),
-(8,3,null,null,'66666666F', 'Elena', 'elenamartinez', 'Martínez', 'elena@example.com', 666666666, 'contraseña8', 'Especialista en turismo rural.'),
-(9,null,null,3,'77777777G', 'David', 'davidgomez', 'Gómez', 'david@example.com', 777777777, 'contraseña9', 'Guía turístico bilingüe.'),
-(10,4,null,null,'88888888H', 'Sofia', 'sofiatorres', 'Torres', 'sofia@example.com', 888888888, 'contraseña10', 'Amante de la historia y la cultura.');
+INSERT INTO Usuarios (id_usuario, dni, nombre, username, apellidos, email, telefono, contraseña, sobre_mi) VALUES 
+(1,'12345678A', 'Juan', 'juanperez', 'Perez', 'juan@example.com', 123456789, 'contraseña1', 'Apasionado por la historia y la cultura de mi país. Como guía, me encanta compartir mis conocimientos sobre los sitios históricos y las tradiciones locales. ¡Ven y descubre la magia de nuestros lugares más emblemáticos'),
+(2,'98765432B', 'María', 'mariagarcia', 'García', 'maria@example.com', 987654321, 'contraseña2', 'Explorador incansable y amante de la naturaleza. Mi misión es llevarte a lugares increíbles fuera de los circuitos turísticos habituales. Juntos, podemos vivir aventuras inolvidables y descubrir la belleza oculta de nuestra tierra.'),
+(3,'11111111A', 'Pedro', 'pedrolopez', 'Lopez', 'pedro@example.com', 111111111, 'contraseña3', 'Adicto a la adrenalina y experto en deportes extremos. Si buscas emociones fuertes y experiencias únicas, estás en el lugar correcto. Prepárate para desafiar tus límites y sentir la verdadera aventura en cada paso del camino.'),
+(4,'22222222B', 'Ana', 'anagomez', 'Gómez', 'ana@example.com', 222222222, 'contraseña4', 'Conocedor de los secretos culinarios locales y amante de la buena comida. Te invito a disfrutar de un viaje gastronómico inolvidable, donde podrás degustar los sabores auténticos de nuestra cocina tradicional y descubrir los mejores restaurantes locales.'),
+(5,'33333333C', 'Luis', 'luisrodriguez', 'Rodríguez', 'luis@example.com', 333333333, 'contraseña5', 'Guía profesional y entusiasta de la fotografía. Mi objetivo es capturar los momentos más especiales de tu viaje y ayudarte a crear recuerdos que perdurarán para siempre. Descubre la belleza de nuestro destino a través de mi lente.'),
+(6,'44444444D', 'Laura', 'lauraramirez', 'Ramírez', 'laura@example.com', 444444444, 'contraseña6', 'Amante de la música y la cultura urbana. Como guía local, te llevaré a los lugares más vibrantes de la ciudad, donde podrás sumergirte en la escena musical, el arte callejero y la vida nocturna. ¡Prepárate para vivir una experiencia única y llena de ritmo!'),
+(7,'55555555E', 'Carlos', 'carlosfernandez', 'Fernández', 'carlos@example.com', 555555555, 'contraseña7', 'Explorador de rincones ocultos y aficionado a la arquitectura. Descubre conmigo los tesoros escondidos de nuestra ciudad, desde antiguas iglesias hasta modernos rascacielos. ¡Déjate sorprender por la diversidad de estilos y la belleza de nuestros edificios!'),
+(8,'66666666F', 'Elena', 'elenamartinez', 'Martínez', 'elena@example.com', 666666666, 'contraseña8', 'Apasionado por el ecoturismo y la conservación del medio ambiente. Acompáñame en una aventura ecológica donde podrás explorar la biodiversidad de nuestra región y aprender sobre la importancia de preservar nuestros recursos naturales para las generaciones futuras.'),
+(9,'77777777G', 'David', 'davidgomez', 'Gómez', 'david@example.com', 777777777, 'contraseña9', 'Experto en leyendas locales y cuentacuentos de corazón. Déjame llevarte en un viaje mágico a través de las historias y mitos de nuestra tierra. Desde relatos de fantasmas hasta leyendas ancestrales, te sumergirás en un mundo de misterio y fascinación.'),
+(10,'88888888H', 'Sofia', 'sofiatorres', 'Torres', 'sofia@example.com', 888888888, 'contraseña10', 'Entusiasta de la aventura y especialista en viajes de mochilero. Si buscas una experiencia auténtica y fuera de lo común, estoy aquí para mostrarte los lugares más auténticos y pintorescos de nuestra región. ¡Prepárate para una aventura única y llena de sorpresas!');
 
 -- insertar el id_usuario en Admins
 UPDATE Admins SET id_usuario = 2 WHERE id_admin = 1;
