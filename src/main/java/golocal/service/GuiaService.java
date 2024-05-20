@@ -8,4 +8,6 @@ public interface GuiaService {
 
 	List<Guia> findAll();
 	
+	Guia findbyId(int idGuia);
+	
 }

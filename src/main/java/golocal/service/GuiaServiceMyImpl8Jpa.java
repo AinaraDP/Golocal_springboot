@@ -20,5 +20,12 @@ public class GuiaServiceMyImpl8Jpa implements GuiaService{
 		return guiaRepository.findAll();
 	}
 
+
+	@Override
+	public Guia findbyId(int idGuia) {
+		return guiaRepository.findById(idGuia).orElse(null);
+	}
+
+
 	
 }
