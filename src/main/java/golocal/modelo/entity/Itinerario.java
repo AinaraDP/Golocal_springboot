@@ -59,6 +59,4 @@ public class Itinerario implements Serializable{
 	@ManyToOne
 	@JoinColumn(name="id_ciudad")
 	private Ciudad ciudad;
-	
-	
 }
