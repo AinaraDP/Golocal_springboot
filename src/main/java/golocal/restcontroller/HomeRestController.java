@@ -1,0 +1,30 @@
+package golocal.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+import golocal.modelo.dto.UsuarioDto;
+import golocal.service.UsuarioService;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+public class HomeRestController {
+	
+	@Autowired
+	private UsuarioService usuarioService;
+
+	@PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody UsuarioDto usuarioDto) {
+        String usuario = usuarioDto.getUsername();
+        String password = usuarioDto.getPassword();
+
+        if (usuarioService.verificarCredenciales(usuario, password)) {
+            return ResponseEntity.ok().body("Login exitoso");
+        } else {
+            return ResponseEntity.status(401).body("Credenciales incorrectas");
+        }
+    }
+}
