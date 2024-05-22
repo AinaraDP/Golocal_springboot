@@ -23,8 +23,8 @@ FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario)
 
 CREATE TABLE `Guias` (
 id_guia int NOT NULL AUTO_INCREMENT,
-idioma varchar (25),
 id_usuario int,
+idioma varchar (25),
 PRIMARY KEY (id_guia),
 FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario)
 );
@@ -73,9 +73,9 @@ FOREIGN KEY (id_ciudad) REFERENCES `Ciudades`(id_ciudad)
 
 CREATE TABLE `itinerarios` (
 id_itinerario int NOT NULL AUTO_INCREMENT,
-id_guia int NOT NULL,
+id_guia int NOT NULL UNIQUE,
 id_ciudad int NOT NULL,
-descripcion varchar (100) NOT NULL,
+descripcion varchar (500) NOT NULL,
 duracion double NOT NULL,
 fecha_disponible date NOT NULL,
 plazas_max int NOT NULL,
