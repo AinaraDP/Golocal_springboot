@@ -28,6 +28,7 @@ public class UsuarioServiceImplMy8Jpa implements UsuarioService{
         Usuario usuario = usuarioRepository.findByUsernameAndPassword(username, password);
         return usuario != null; // Si el usuario es null, las credenciales no coinciden
     }
+	
 
 	@Override
 	public Usuario findByUsernameAndPassword(String username, String password) {
