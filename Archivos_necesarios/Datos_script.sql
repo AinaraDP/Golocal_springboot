@@ -156,21 +156,19 @@ INSERT INTO Admins (id_admin, id_usuario) VALUES
 (1,88), (2,89), (3,90);
 
 
-
-
 ALTER TABLE Post_blog AUTO_INCREMENT = 1;
 -- Insertar datos en la tabla Post_blog
 INSERT INTO Post_blog (id_admin, titulo, contenido, autor, fecha_publi, descripcion, minutos_lectura) VALUES 
-(1, 'Descubre Barcelona', '¡Ven y descubre los secretos de Barcelona con nuestros guías expertos!', 'Admin 1', '2024-05-01', 'Conoce Barcelona a fondo', 10),
-(2, 'Explora Madrid', 'Descubre la historia y la cultura de Madrid en una visita guiada única.', 'Admin 2', '2024-05-02', 'Explora la capital de España', 15),
-(3, 'Ruta por París', 'Disfruta de un recorrido por los lugares más emblemáticos de París.', 'Admin 3', '2024-05-03', 'Visita París', 12),
-(1, 'Gastronomía en Roma', 'Conoce los mejores lugares para degustar la comida italiana en Roma.', 'Admin 4', '2024-05-04', 'Sabores de Roma', 8),
-(2, 'Tour por Berlín', 'Descubre la historia y cultura de Berlín en un recorrido inolvidable.', 'Admin 5', '2024-05-05', 'Historia en Berlín', 14),
-(3, 'Aventura en Lisboa', 'Explora los rincones ocultos de Lisboa con nuestras guías.', 'Admin 6', '2024-05-06', 'Descubre Lisboa', 10),
-(1, 'Cultura en Tokio', 'Sumérgete en la cultura japonesa con una visita guiada por Tokio.', 'Admin 7', '2024-05-07', 'Cultura en Tokio', 13),
-(1, 'Historia de Moscú', 'Conoce los lugares históricos de Moscú en un tour exclusivo.', 'Admin 8', '2024-05-08', 'Historia en Moscú', 11),
-(3, 'Explorando Atenas', 'Recorre la antigua ciudad de Atenas y descubre su rica historia.', 'Admin 9', '2024-05-09', 'Atenas Antiguo', 9),
-(2, 'Encantos de Buenos Aires', 'Sumérgete en la vibrante cultura de Buenos Aires.', 'Admin 10', '2024-05-10', 'Cultura en Buenos Aires', 10);
+(1, 'Descubre Barcelona', '¡Ven y descubre los secretos de Barcelona con nuestros guías expertos! Explora sus calles llenas de historia, visita sus monumentos emblemáticos y disfruta de la deliciosa gastronomía local. No te pierdas la Sagrada Familia, el Parque Güell y las Ramblas. ¡Barcelona te espera!', 'Admin 1', '2024-05-01', 'Conoce Barcelona a fondo', 10),
+(2, 'Explora Madrid', 'Descubre la historia y la cultura de Madrid en una visita guiada única. Recorre el Palacio Real, pasea por el Retiro y admira el arte en el Museo del Prado. No te olvides de probar el famoso bocadillo de calamares en la Plaza Mayor. ¡Madrid te sorprenderá!', 'Admin 2', '2024-05-02', 'Explora la capital de España', 15),
+(3, 'Ruta por París', 'Disfruta de un recorrido por los lugares más emblemáticos de París. Visita la Torre Eiffel, pasea por Montmartre y admira la Mona Lisa en el Louvre. No te pierdas un crucero por el río Sena al atardecer. ¡París te enamorará!', 'Admin 3', '2024-05-03', 'Visita París', 12),
+(1, 'Gastronomía en Roma', 'Conoce los mejores lugares para degustar la comida italiana en Roma. Prueba la auténtica pizza napolitana, disfruta de un helado en la Fontana di Trevi y visita el Coliseo romano. No te pierdas el encanto de las calles adoquinadas de Trastevere. ¡Roma te cautivará con su cocina!', 'Admin 4', '2024-05-04', 'Sabores de Roma', 8),
+(2, 'Tour por Berlín', 'Descubre la historia y cultura de Berlín en un recorrido inolvidable. Visita el Muro de Berlín, explora el Barrio Judío y maravíllate con la arquitectura moderna de la Puerta de Brandeburgo. No te olvides de probar la cerveza alemana en un auténtico Biergarten. ¡Berlín te espera con los brazos abiertos!', 'Admin 5', '2024-05-05', 'Historia en Berlín', 14),
+(3, 'Aventura en Lisboa', 'Explora los rincones ocultos de Lisboa con nuestras guías. Descubre los azulejos tradicionales, pasea por el barrio de Alfama y admira las vistas desde el mirador de San Jorge. No te pierdas probar el delicioso bacalao portugués. ¡Lisboa te sorprenderá con su encanto!', 'Admin 6', '2024-05-06', 'Descubre Lisboa', 10),
+(1, 'Cultura en Tokio', 'Sumérgete en la cultura japonesa con una visita guiada por Tokio. Explora el bullicioso barrio de Shibuya, visita el templo Senso-ji en Asakusa y maravíllate con la tecnología en Akihabara. No te pierdas probar el sushi fresco en el mercado de Tsukiji. ¡Tokio te espera con los brazos abiertos!', 'Admin 7', '2024-05-07', 'Cultura en Tokio', 13),
+(1, 'Historia de Moscú', 'Conoce los lugares históricos de Moscú en un tour exclusivo. Visita el Kremlin, maravíllate con la Catedral de San Basilio y pasea por la Plaza Roja. No te pierdas probar el vodka ruso en un bar tradicional. ¡Moscú te sorprenderá con su rica historia!', 'Admin 8', '2024-05-08', 'Historia en Moscú', 11),
+(3, 'Explorando Atenas', 'Recorre la antigua ciudad de Atenas y descubre su rica historia. Visita la Acrópolis, pasea por el barrio de Plaka y prueba el delicioso souvlaki griego. No te pierdas la puesta de sol desde el Monte Licabeto. ¡Atenas te cautivará con su encanto!', 'Admin 9', '2024-05-09', 'Atenas Antiguo', 9),
+(2, 'Encantos de Buenos Aires', 'Sumérgete en la vibrante cultura de Buenos Aires. Baila tango en San Telmo, visita el barrio de La Boca y disfruta de un asado argentino en Palermo. No te pierdas un espectáculo de fútbol en el estadio de Boca Juniors. ¡Buenos Aires te espera con los brazos abiertos!', 'Admin 10', '2024-05-10', 'Cultura en Buenos Aires', 10);
 
 
 ALTER TABLE Paises AUTO_INCREMENT = 1;
