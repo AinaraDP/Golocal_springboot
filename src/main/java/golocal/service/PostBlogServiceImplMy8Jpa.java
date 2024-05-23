@@ -19,4 +19,9 @@ public class PostBlogServiceImplMy8Jpa implements PostBlogService {
 		return postBlogRepository.findAll();
 	}
 
+	@Override
+	public PostBlog findByPostId(int postId) {
+		return postBlogRepository.findById(postId).orElse(null);
+	}
+
 }
