@@ -29,7 +29,10 @@ public class FilterChainConfiguration {
 		http.csrf(csrf -> csrf.disable())
 				.authorizeHttpRequests(authorize -> authorize
 						.requestMatchers("/login", "/logout", "/**").permitAll()
-						);
+						.requestMatchers("/publicar-ruta").hasAnyAuthority("ROL_GUIA", "ROL_ADMIN")
+						
+						)
+				;
 		return http.build();
 	}
 	

@@ -1,16 +1,20 @@
 package golocal.restcontroller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import golocal.modelo.entity.Guia;
-import golocal.repository.GuiaRepository;
-import golocal.service.GuiaService;
+import golocal.modelo.entity.Rol;
+import golocal.modelo.entity.Usuario;
 import golocal.service.UsuarioService;
 
 @RestController
@@ -31,6 +35,9 @@ public class UsuarioRestController {
         return usuarioService.findGuiasByCiudadPaisFecha(nombreCiudad, nombrePais, fechaDisponible);
     }
     */
+	
+	
+	
 	
 	
 }

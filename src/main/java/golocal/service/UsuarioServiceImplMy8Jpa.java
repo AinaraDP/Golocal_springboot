@@ -13,6 +13,7 @@ public class UsuarioServiceImplMy8Jpa implements UsuarioService{
 	@Autowired
 	UsuarioRepository usuarioRepository;
 	
+	
 	@Override
 	public List<Usuario> findAll() {
 		// TODO Auto-generated method stub
@@ -35,5 +36,7 @@ public class UsuarioServiceImplMy8Jpa implements UsuarioService{
 		
 		return usuarioRepository.findByUsernameAndPassword(username, password);
 	}
+	
+	 
 
 }

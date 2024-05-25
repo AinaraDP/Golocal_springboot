@@ -1,5 +1,9 @@
 USE go_local;
 
+ALTER TABLE roles;
+INSERT INTO roles (id_rol, nombre) VALUES
+(1,'ROL_ADMIN'), (2,'ROL_GUIA'), (3,'ROL_CLIENTE');
+
 ALTER TABLE Usuarios AUTO_INCREMENT = 1;
 INSERT INTO `Usuarios` (`dni`, `nombre`, `username`, `apellidos`, `email`, `telefono`, `contraseña`, `sobre_mi`) VALUES
 ('123456789', 'Juan', 'juanito123', 'Pérez García', 'juanito@email.com', 123456789, 'contraseña123', 'Soy un entusiasta de la tecnología, especialmente apasionado por el desarrollo de aplicaciones web. Me encanta aprender nuevas tecnologías y compartir conocimientos con la comunidad.'),
@@ -94,6 +98,7 @@ INSERT INTO `Usuarios` (`dni`, `nombre`, `username`, `apellidos`, `email`, `tele
 ('963258140', 'Sofía', 'sofi', 'Pérez Martínez', 'sofia2@example.com', 963258140, 'sofi123', 'Soy Sofía y disfruto del patinaje y los deportes extremos.');
 
 
+
 ALTER TABLE Clientes AUTO_INCREMENT = 1;
 -- Primero insertar los id_admins
 INSERT INTO Clientes (id_cliente, id_usuario) VALUES
@@ -155,21 +160,91 @@ INSERT INTO Guias (id_guia,id_usuario, idioma) VALUES
 INSERT INTO Admins (id_admin, id_usuario) VALUES
 (1,88), (2,89), (3,90);
 
+ALTER TABLE Usuario_roles;
+INSERT INTO usuario_roles (id_rol, id_usuario) VALUES
+(1,88), (1,89), (1,90);
+
+-- Meter a todos los guias con el rol 2
+INSERT INTO usuario_roles (id_rol, id_usuario) VALUES
+(2, 44), (2, 45),(2, 46),(2, 47),(2, 48),(2, 49),(2, 50),(2, 51),(2, 52),(2, 53),(2, 54),(2, 55),(2, 56),(2, 57),(2, 58),(2, 59),
+(2, 60),(2, 61),(2, 62),(2, 63),(2, 64),(2, 65),(2, 66),(2, 67),(2, 68),(2, 69),(2, 71),(2, 72),(2, 73),(2, 74),(2, 75),(2, 76),
+(2, 77),(2, 78),(2, 79),(2, 80),(2, 81),(2, 82),(2, 83),(2, 84),(2, 85),(2, 86),(2, 87);
+
+-- Meter a todos los clientes con el rol 3
+INSERT INTO usuario_roles (id_rol, id_usuario)
+VALUES
+(3, 1),(3, 2),(3, 3),(3, 4),(3, 5),(3, 6),(3, 7),(3, 8),(3, 9),(3, 10),(3, 11),(3, 12),(3, 13),(3, 14),(3, 15),(3, 16),(3, 17),(3, 18),
+(3, 19),(3, 20),(3, 21),(3, 22),(3, 23),(3, 24),(3, 25),(3, 26),(3, 27),(3, 28),(3, 29),(3, 30),(3, 31),(3, 32),(3, 33),(3, 34),(3, 35),
+(3, 36),(3, 37),(3, 38),(3, 39),(3, 40),(3, 41),(3, 42),(3, 43);
+
 
 ALTER TABLE Post_blog AUTO_INCREMENT = 1;
--- Insertar datos en la tabla Post_blog
-INSERT INTO Post_blog (id_admin, titulo, contenido, autor, fecha_publi, descripcion, minutos_lectura) VALUES 
-(1, 'Descubre Barcelona', '¡Ven y descubre los secretos de Barcelona con nuestros guías expertos! Explora sus calles llenas de historia, visita sus monumentos emblemáticos y disfruta de la deliciosa gastronomía local. No te pierdas la Sagrada Familia, el Parque Güell y las Ramblas. ¡Barcelona te espera!', 'Admin 1', '2024-05-01', 'Conoce Barcelona a fondo', 10),
-(2, 'Explora Madrid', 'Descubre la historia y la cultura de Madrid en una visita guiada única. Recorre el Palacio Real, pasea por el Retiro y admira el arte en el Museo del Prado. No te olvides de probar el famoso bocadillo de calamares en la Plaza Mayor. ¡Madrid te sorprenderá!', 'Admin 2', '2024-05-02', 'Explora la capital de España', 15),
-(3, 'Ruta por París', 'Disfruta de un recorrido por los lugares más emblemáticos de París. Visita la Torre Eiffel, pasea por Montmartre y admira la Mona Lisa en el Louvre. No te pierdas un crucero por el río Sena al atardecer. ¡París te enamorará!', 'Admin 3', '2024-05-03', 'Visita París', 12),
-(1, 'Gastronomía en Roma', 'Conoce los mejores lugares para degustar la comida italiana en Roma. Prueba la auténtica pizza napolitana, disfruta de un helado en la Fontana di Trevi y visita el Coliseo romano. No te pierdas el encanto de las calles adoquinadas de Trastevere. ¡Roma te cautivará con su cocina!', 'Admin 4', '2024-05-04', 'Sabores de Roma', 8),
-(2, 'Tour por Berlín', 'Descubre la historia y cultura de Berlín en un recorrido inolvidable. Visita el Muro de Berlín, explora el Barrio Judío y maravíllate con la arquitectura moderna de la Puerta de Brandeburgo. No te olvides de probar la cerveza alemana en un auténtico Biergarten. ¡Berlín te espera con los brazos abiertos!', 'Admin 5', '2024-05-05', 'Historia en Berlín', 14),
-(3, 'Aventura en Lisboa', 'Explora los rincones ocultos de Lisboa con nuestras guías. Descubre los azulejos tradicionales, pasea por el barrio de Alfama y admira las vistas desde el mirador de San Jorge. No te pierdas probar el delicioso bacalao portugués. ¡Lisboa te sorprenderá con su encanto!', 'Admin 6', '2024-05-06', 'Descubre Lisboa', 10),
-(1, 'Cultura en Tokio', 'Sumérgete en la cultura japonesa con una visita guiada por Tokio. Explora el bullicioso barrio de Shibuya, visita el templo Senso-ji en Asakusa y maravíllate con la tecnología en Akihabara. No te pierdas probar el sushi fresco en el mercado de Tsukiji. ¡Tokio te espera con los brazos abiertos!', 'Admin 7', '2024-05-07', 'Cultura en Tokio', 13),
-(1, 'Historia de Moscú', 'Conoce los lugares históricos de Moscú en un tour exclusivo. Visita el Kremlin, maravíllate con la Catedral de San Basilio y pasea por la Plaza Roja. No te pierdas probar el vodka ruso en un bar tradicional. ¡Moscú te sorprenderá con su rica historia!', 'Admin 8', '2024-05-08', 'Historia en Moscú', 11),
-(3, 'Explorando Atenas', 'Recorre la antigua ciudad de Atenas y descubre su rica historia. Visita la Acrópolis, pasea por el barrio de Plaka y prueba el delicioso souvlaki griego. No te pierdas la puesta de sol desde el Monte Licabeto. ¡Atenas te cautivará con su encanto!', 'Admin 9', '2024-05-09', 'Atenas Antiguo', 9),
-(2, 'Encantos de Buenos Aires', 'Sumérgete en la vibrante cultura de Buenos Aires. Baila tango en San Telmo, visita el barrio de La Boca y disfruta de un asado argentino en Palermo. No te pierdas un espectáculo de fútbol en el estadio de Boca Juniors. ¡Buenos Aires te espera con los brazos abiertos!', 'Admin 10', '2024-05-10', 'Cultura en Buenos Aires', 10);
-
+INSERT INTO Post_blog (id_admin, titulo, parrafo1, contenido1, parrafo2, contenido2, parrafo3, contenido3, parrafo4, contenido4, autor, fecha_publi, descripcion, minutos_lectura) VALUES 
+(1, 'Encanto de Venecia', 
+    'Descubre los canales y la historia de Venecia.',
+    'Explora los canales de Venecia en una góndola tradicional, visita la Basílica de San Marcos y admira las obras maestras de la Galería de la Academia. No te pierdas un paseo por el Puente de Rialto y una visita al Palacio Ducal. ¡Venecia te cautivará con su belleza única!',
+    'Disfruta de la gastronomía veneciana y sus encantadores rincones.',
+    'Venecia es famosa por sus delicias culinarias, desde los cicchetti en los bares locales hasta los platos de pescado fresco en los restaurantes junto al Gran Canal. Explora los barrios menos conocidos como Cannaregio y Dorsoduro, donde encontrarás auténticas trattorias y tiendas de artesanía local. No te pierdas un paseo al atardecer por los callejones estrechos y los puentes pintorescos.',
+    'Descubre las islas cercanas y sus tesoros ocultos.',
+    'Venecia está rodeada de islas fascinantes que merecen ser exploradas. Toma un vaporetto hacia las islas de Murano y Burano, famosas por sus vidrieras y encajes. Visita también la isla de Torcello, donde encontrarás antiguas iglesias y ruinas romanas. No te pierdas la oportunidad de degustar el vino local y los productos artesanales en las tabernas de la laguna.',
+    NULL, NULL,
+    'Admin 1', '2024-05-11', 'Explora la ciudad de los canales', 12),
+(2, 'Maravillas de Florencia', 
+    'Explora el arte y la historia de Florencia.',
+    'Visita la Galería Uffizi para ver las obras maestras del Renacimiento, admira la cúpula de la Catedral de Santa María del Fiore y pasea por los Jardines de Boboli. No te pierdas un paseo por el Ponte Vecchio y una visita al Palazzo Pitti. ¡Florencia te sorprenderá con su belleza y su legado artístico!',
+    'Descubre los secretos mejor guardados de la ciudad.',
+    'Florencia es una ciudad llena de rincones encantadores y curiosidades históricas. Explora el barrio de Oltrarno, donde encontrarás talleres de artesanos y trattorias auténticas. Visita la iglesia de Santa Croce y el Mercato Centrale para experimentar la vida cotidiana de la ciudad. No te pierdas una degustación de vinos toscanos y una cena en una trattoria familiar.',
+    'Disfruta de la naturaleza y la tranquilidad de los alrededores.',
+    'Florencia está rodeada de paisajes impresionantes y pueblos medievales que merecen ser descubiertos. Toma un tren hacia la campiña toscana y visita las ciudades de Siena y San Gimignano. Explora las colinas de Chianti y degusta el vino y el aceite de oliva local en una bodega familiar. No te pierdas la oportunidad de hacer una caminata por los Apeninos y disfrutar de las vistas panorámicas.',
+    NULL, NULL,
+    'Admin 2', '2024-05-12', 'Explora la cuna del Renacimiento', 14),
+(3, 'Secretos de Praga', 
+    'Descubre la magia y el misterio de Praga.',
+    'Pasea por el Puente de Carlos, visita el Castillo de Praga y explora el barrio judío. No te pierdas la oportunidad de subir a la Torre de la Pólvora y disfrutar de las vistas panorámicas de la ciudad. ¡Praga te fascinará con su encanto medieval!',
+    'Explora los rincones menos conocidos de la ciudad.',
+    'Praga esconde numerosos secretos y curiosidades históricas que merecen ser descubiertos. Explora el barrio de Malá Strana, donde encontrarás iglesias barrocas y palacios renacentistas. Visita el barrio de Vyšehrad y el cementerio judío para conocer la historia y la cultura de la ciudad. No te pierdas una visita al Museo del Comunismo y una cena en un restaurante tradicional checo.',
+    'Disfruta de la música y la vida nocturna de la ciudad.',
+    'Praga es famosa por su vibrante escena musical y su vida nocturna animada. Disfruta de un concierto de música clásica en la Sala Smetana o de un espectáculo de ópera en el Teatro Nacional. Explora los bares y clubes del barrio de Zizkov y del centro histórico, donde encontrarás música en vivo y DJs internacionales. No te pierdas la oportunidad de probar la cerveza checa en una taberna local y de bailar hasta altas horas de la madrugada.',
+    NULL, NULL,
+    'Admin 3', '2024-05-13', 'Descubre la ciudad dorada', 13),
+(1, 'Encantos de Sevilla', 
+    'Descubre la historia y la cultura de Sevilla.',
+    'Visita la Catedral de Sevilla, pasea por el Barrio de Santa Cruz y admira los Reales Alcázares. No te pierdas la oportunidad de subir a la Giralda y disfrutar de las vistas panorámicas de la ciudad. ¡Sevilla te conquistará con su belleza y su pasión!',
+    'Explora los barrios más auténticos y sus tradiciones.',
+    'Sevilla es una ciudad llena de tradiciones y costumbres que merecen ser descubiertas. Explora el barrio de Triana, donde encontrarás talleres de cerámica y bares de flamenco. Visita el Mercado de la Encarnación y el Mercado de Triana para disfrutar de productos locales y artesanía. No te pierdas una visita al Barrio de los Remedios y una degustación de tapas en un bar típico.',
+    'Disfruta del arte y la arquitectura de la ciudad.',
+    'Sevilla es una ciudad rica en arte y arquitectura, con una gran variedad de monumentos y museos para visitar. Explora el Real Alcázar, un palacio de estilo mudéjar con hermosos jardines y patios. Visita la Plaza de España y el Parque de María Luisa para disfrutar de la arquitectura neomudéjar y pasear por sus amplios jardines. No te pierdas una visita al Museo de Bellas Artes y una tarde de compras en la calle Sierpes.',
+    NULL, NULL,
+    'Admin 1', '2024-05-14', 'Descubre la ciudad de la Giralda', 11),
+(2, 'Maravillas de Praga', 
+    'Explora la belleza y el encanto de Praga.',
+    'Pasea por el Puente de Carlos, visita el Castillo de Praga y admira el Reloj Astronómico en la Plaza del Casco Antiguo. No te pierdas una visita al barrio judío y una cena en un restaurante típico checo. ¡Praga te cautivará con su atmósfera medieval!',
+    'Descubre los rincones más pintorescos y los secretos mejor guardados de la ciudad.',
+    'Praga es una ciudad llena de rincones encantadores y curiosidades históricas. Explora el barrio de Malá Strana, donde encontrarás palacios barrocos y callejones adoquinados. Visita el barrio de Žižkov y la colina de Petřín para disfrutar de las vistas panorámicas de la ciudad. No te pierdas una visita al Museo Franz Kafka y una cata de cerveza en una taberna local.',
+    'Disfruta de la música y la vida nocturna de Praga.',
+    'Praga es famosa por su vibrante escena musical y su vida nocturna animada. Disfruta de un concierto de música clásica en el Rudolfinum o de un espectáculo de jazz en el club U Malého Glena. Explora los bares y clubes del barrio de Vinohrady y del centro histórico, donde encontrarás música en vivo y DJs internacionales. No te pierdas la oportunidad de probar la absenta checa en un bar temático y de bailar hasta altas horas de la madrugada.',
+    NULL, NULL,
+    'Admin 2', '2024-05-15', 'Descubre la ciudad dorada de Europa Central', 12),
+(3, 'Encanto de Budapest', 
+    'Descubre la belleza y la historia de Budapest.',
+    'Pasea por el Puente de las Cadenas, visita el Palacio Real y relájate en los baños termales. No te pierdas una visita a la Basílica de San Esteban y una cena en un restaurante típico húngaro. ¡Budapest te sorprenderá con su arquitectura y su cultura únicas!',
+    'Explora los barrios más auténticos y los rincones menos conocidos de la ciudad.',
+    'Budapest es una ciudad llena de contrastes y rincones pintorescos que merecen ser descubiertos. Explora el barrio judío, donde encontrarás sinagogas históricas y ruinas medievales. Visita el distrito de Castle Hill y el barrio de Buda para disfrutar de las vistas panorámicas del Danubio y la ciudad. No te pierdas una visita al Mercado Central y una cata de vinos en una bodega local.',
+    'Disfruta de la gastronomía y la vida nocturna de Budapest.',
+    'Budapest es famosa por su cocina tradicional húngara y su animada vida nocturna. Prueba platos típicos como el goulash y el lángos en un restaurante local y luego dirígete a un bar de ruina en el distrito de Pest para disfrutar de música en vivo y cócteles creativos. Explora los bares y clubes del barrio de Erzsébetváros y del centro histórico, donde encontrarás fiestas hasta altas horas de la madrugada. No te pierdas la oportunidad de relajarte en uno de los baños termales de la ciudad y disfrutar de las vistas del Danubio.',
+    NULL, NULL,
+    'Admin 3', '2024-05-16', 'Explora la Perla del Danubio', 13),
+(1, 'Maravillas de Estambul', 
+    'Descubre la historia y la cultura de Estambul.',
+    'Visita la Mezquita Azul, pasea por el Gran Bazar y admira el Palacio de Topkapi. No te pierdas una visita al Bósforo y una cena en un restaurante típico turco. ¡Estambul te fascinará con su mezcla única de Oriente y Occidente!',
+    'Explora los barrios más auténticos y los rincones menos conocidos de la ciudad.',
+    'Estambul es una ciudad llena de contrastes y sorpresas que merecen ser descubiertas. Explora el barrio de Sultanahmet, donde encontrarás callejones adoquinados y palacios otomanos. Visita el distrito de Beyoğlu y la Torre Gálata para disfrutar de las vistas panorámicas del Bósforo y la ciudad. No te pierdas una visita al Mercado de las Especias y un paseo en ferry por el Cuerno de Oro.',
+    'Disfruta de la gastronomía y la vida nocturna de Estambul.',
+    'Estambul es famosa por su cocina tradicional turca y su animada vida nocturna. Prueba platos típicos como el kebab y el baklava en un restaurante local y luego dirígete a un café histórico en el distrito de Kadıköy para disfrutar de música en vivo y dulces turcos. Explora los bares y clubes del barrio de Karaköy y del centro histórico, donde encontrarás fiestas hasta altas horas de la madrugada. No te pierdas la oportunidad de relajarte en un hammam tradicional y disfrutar de un baño turco con vistas al Bósforo.',
+    NULL, NULL,
+    'Admin 1', '2024-05-17', 'Explora la ciudad entre dos continentes', 14);
+    
+   
 
 ALTER TABLE Paises AUTO_INCREMENT = 1;
 -- Insertar datos en la tabla Paises

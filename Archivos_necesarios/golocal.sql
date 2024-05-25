@@ -1,6 +1,12 @@
 create database go_local;
 use go_local;
 
+CREATE TABLE Roles (
+id_rol int NOT NULL,
+nombre varchar (50) NOT NULL,
+PRIMARY KEY (id_rol)
+);
+
 CREATE TABLE `Usuarios` (
 id_usuario int NOT NULL AUTO_INCREMENT,
 dni char (9) NOT NULL,
@@ -12,6 +18,13 @@ telefono int NOT NULL,
 contraseña varchar (25) NOT NULL,
 sobre_mi varchar (500),
 PRIMARY KEY (id_usuario)
+);
+
+CREATE TABLE Usuario_roles (
+id_rol int NOT NULL,
+id_usuario int NOT NULL,
+FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario),
+FOREIGN KEY (id_rol) REFERENCES `roles`(id_rol)
 );
 
 CREATE TABLE `Admins` (
@@ -40,7 +53,14 @@ CREATE TABLE `Post_blog` (
 id_post int NOT NULL AUTO_INCREMENT,
 id_admin int NOT NULL,
 titulo varchar (50) NOT NULL,
-contenido varchar (2000) NOT NULL,
+parrafo1 varchar (200) NOT NULL,
+contenido1 varchar (1000) NOT NULL,
+parrafo2 varchar (200),
+contenido2 varchar (1000),
+parrafo3 varchar (200),
+contenido3 varchar (1000),
+parrafo4 varchar (200),
+contenido4 varchar (1000),
 autor varchar (25) NOT NULL,
 fecha_publi date NOT NULL,
 descripcion varchar (100) NOT NULL,
