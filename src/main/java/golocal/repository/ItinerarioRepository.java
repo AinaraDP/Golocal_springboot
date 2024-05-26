@@ -17,5 +17,8 @@ public interface ItinerarioRepository extends JpaRepository<Itinerario, Integer>
 		List<Itinerario> findByCiudadPaisYFecha(@Param("nombreCiudad") String nombreCiudad,
 		                                         @Param("nombrePais") String nombrePais,
 		                                         @Param("fechaDisponible") Date fechaDisponible);
+	
+    @Query("SELECT i FROM Itinerario i WHERE i.guia.idGuia = :idGuia")
+    Itinerario findByGuiaId(@Param("idGuia") int idGuia);
 
 }
