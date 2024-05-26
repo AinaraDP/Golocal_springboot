@@ -43,6 +43,7 @@ public class Itinerario implements Serializable{
 	private Date fechaDisponible;
 	@Column(name="plazas_max")
 	private int plazasMax;
+	private double precio;
 	private boolean monte;
 	private boolean playa;
 	private boolean cultura;

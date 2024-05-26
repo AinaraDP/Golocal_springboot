@@ -38,7 +38,14 @@ public class PostBlog implements Serializable{
 	@JoinColumn(name="id_admin")
 	private Admin admin;
 	private String titulo;
-	private String contenido;
+	private String parrafo1;
+	private String contenido1;
+	private String parrafo2;
+	private String contenido2;
+	private String parrafo3;
+	private String contenido3;
+	private String parrafo4;
+	private String contenido4;
 	private String autor;
 	@Column(name="fecha_publi")
 	private Date fechaPubli;
