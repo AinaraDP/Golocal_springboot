@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
 import golocal.modelo.entity.Itinerario;
 
 public interface ItinerarioRepository extends JpaRepository<Itinerario, Integer> {
@@ -17,5 +16,10 @@ public interface ItinerarioRepository extends JpaRepository<Itinerario, Integer>
 		List<Itinerario> findByCiudadPaisYFecha(@Param("nombreCiudad") String nombreCiudad,
 		                                         @Param("nombrePais") String nombrePais,
 		                                         @Param("fechaDisponible") Date fechaDisponible);
+	
+
+	@Query("SELECT i FROM Itinerario i WHERE i.guia.idGuia = :idGuia")
+	Itinerario getItinerarioByIdGuia(int idGuia);
+
 
 }

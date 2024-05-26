@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import golocal.modelo.entity.Itinerario;
 import golocal.repository.ItinerarioRepository;
 import golocal.service.ItinerarioService;
@@ -39,5 +38,21 @@ public class ItinerarioRestController {
 	        @PathVariable("fechaDisponible") @DateTimeFormat(pattern="yyyy-MM-dd") Date fechaDisponible) {
 	    return itinerarioRepository.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
 	}
+	
+	@GetMapping("/{id}")
+	public Itinerario buscarUno(@PathVariable("id" )int idItinerario) {
+		
+		return itinerarioService.findById(idItinerario);
+	}
+	
+	@GetMapping("/byGuia/{id}")
+	public Itinerario byGuiaId(@PathVariable("id") int idGuia) {
+		
+		return itinerarioService.getItinerarioByIdGuia(idGuia);
+	}
+	
+	
+	
+	
 
 }
