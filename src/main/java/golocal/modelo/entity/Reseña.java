@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,24 +25,31 @@ import lombok.ToString;
 @Getter
 @Setter
 @Entity
-@Table(name="reseña")
+@Table(name="reseñas")
 public class Reseña implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id_reseña")
-	private int idReseña;
-	private double puntuacion;
-	private Date fecha;
-	private String contenido;
-	@Column(name="id_itinerario")
-	private Itinerario itinerario;
-	@Column(name="id_cliente")
-	private Cliente cliente;
-	@Column(name="id_guia")
-	private Guia guia;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reseña")
+    private int idReseña;
+
+    private double puntuacion;
+    private Date fecha;
+    private String contenido;
+
+    @ManyToOne
+    @JoinColumn(name = "id_itinerario")
+    private Itinerario itinerario;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "id_guia")
+    private Guia guia;
 	
 	
 	
