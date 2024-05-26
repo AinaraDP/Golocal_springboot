@@ -170,6 +170,8 @@ INSERT INTO usuario_roles (id_rol, id_usuario) VALUES
 (2, 60),(2, 61),(2, 62),(2, 63),(2, 64),(2, 65),(2, 66),(2, 67),(2, 68),(2, 69),(2, 71),(2, 72),(2, 73),(2, 74),(2, 75),(2, 76),
 (2, 77),(2, 78),(2, 79),(2, 80),(2, 81),(2, 82),(2, 83),(2, 84),(2, 85),(2, 86),(2, 87);
 
+
+ALTER TABLE Usuario_roles AUTO_INCREMENT = 1;
 -- Meter a todos los clientes con el rol 3
 INSERT INTO usuario_roles (id_rol, id_usuario)
 VALUES

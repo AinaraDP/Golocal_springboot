@@ -32,19 +32,20 @@ public class HomeRestController {
 	*/
 	
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody UsuarioDto usuarioDto) {
-	    String usuario = usuarioDto.getUsername();
+	public ResponseEntity<Usuario> login(@RequestBody UsuarioDto usuarioDto) {
+	    String username = usuarioDto.getUsername();
 	    String password = usuarioDto.getPassword();
-	    Usuario usuarioEntity = usuarioService.findByUsername(usuario);
+	    Usuario usuarioEntity = usuarioService.findByUsername(username);
 
 	    if (usuarioEntity == null) {
-	        return ResponseEntity.status(401).body("Usuario incorrecto");
+	        return ResponseEntity.status(401).body(null); // Usuario incorrecto
 	    }
 
-	    if (!usuarioService.verificarCredenciales(usuario, password)) {
-	        return ResponseEntity.status(401).body("Contraseña incorrecta");
+	    if (!usuarioService.verificarCredenciales(username, password)) {
+	        return ResponseEntity.status(401).body(null); // Contraseña incorrecta
 	    }
 
-	    return ResponseEntity.ok().body("Login exitoso");
+	    return ResponseEntity.ok().body(usuarioEntity); // Devuelve el usuario completo
 	}
+
 }
