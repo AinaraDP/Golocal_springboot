@@ -8,5 +8,6 @@ import golocal.modelo.entity.PostBlog;
 public interface PostBlogService {
 	
 	List<PostBlog> findAll();
+	PostBlog findByPostId(int postId);
 
 }
