@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import golocal.modelo.entity.Ciudad;
 import golocal.modelo.entity.Guia;
 import golocal.service.GuiaService;
 
@@ -29,4 +30,9 @@ public class GuiaRestController {
 	public Guia buscarUno(@PathVariable("id" )int idGuia) {
 		return guiaService.findbyId(idGuia);
 	}
+	
+    @GetMapping("/ciudad/{idGuia}")
+    public Ciudad getCiudadByGuiaId(@PathVariable int idGuia) {
+    	return guiaService.findCiudadByIdGuia(idGuia);
+    }
 }
