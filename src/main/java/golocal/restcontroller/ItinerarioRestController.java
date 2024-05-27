@@ -51,6 +51,12 @@ public class ItinerarioRestController {
 		return itinerarioService.getItinerarioByIdGuia(idGuia);
 	}
 	
+	@GetMapping("/byUsuario/{id}")
+	public Itinerario findItinerarioByUserId(@PathVariable("id") int idUsuario) {
+		
+		return itinerarioRepository.findItinerarioByUserId(idUsuario);
+	}
+	
 	
 	
 	

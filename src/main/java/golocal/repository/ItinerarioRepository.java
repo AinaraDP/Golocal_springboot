@@ -20,6 +20,8 @@ public interface ItinerarioRepository extends JpaRepository<Itinerario, Integer>
 	@Query("SELECT i FROM Itinerario i WHERE i.guia.idGuia = :idGuia")
 	Itinerario getItinerarioByIdGuia(int idGuia);
 
+	@Query("SELECT it FROM Itinerario it JOIN it.guia g WHERE g.usuario.idUsuario = :idUsuario")
+    Itinerario findItinerarioByUserId( int idUsuario);
 
 
 }
