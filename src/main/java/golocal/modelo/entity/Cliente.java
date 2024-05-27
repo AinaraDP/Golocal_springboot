@@ -37,7 +37,4 @@ public class Cliente implements Serializable{
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 	
-	
-	
-	
 }
