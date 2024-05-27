@@ -40,25 +40,26 @@ public class UsuarioRestController {
 	}
 	
 	@PutMapping("/user-profile/{id}")
-	public ResponseEntity<String> updateUser(@PathVariable int id, @RequestBody UserSignUpDTO userUpdateDTO) {
-	    return usuarioRepository.findById(id).map(usuario -> {
-	        usuario.setNombre(userUpdateDTO.getNombre());
-	        usuario.setApellidos(userUpdateDTO.getApellidos());
-	        usuario.setEmail(userUpdateDTO.getEmail());
-	        usuario.setTelefono(userUpdateDTO.getTelefono());
-	        
-	        // Verificar si se proporciona una nueva contraseña
-	        if (userUpdateDTO.getContrasena() != null && !userUpdateDTO.getContrasena().isEmpty()) {
-	            usuario.setPassword(userUpdateDTO.getContrasena());
-	        }
-	        
-	        usuario.setDni(userUpdateDTO.getDni());
-	        usuario.setUsername(userUpdateDTO.getUsername());
-	        usuario.setSobreMi(userUpdateDTO.getSobreMi());
+	 public ResponseEntity<Usuario> updateUser(@PathVariable int id, @RequestBody UserSignUpDTO userUpdateDTO) {
+	     return usuarioRepository.findById(id).map(usuario -> {
+	         usuario.setNombre(userUpdateDTO.getNombre());
+	         usuario.setApellidos(userUpdateDTO.getApellidos());
+	         usuario.setEmail(userUpdateDTO.getEmail());
+	         usuario.setTelefono(userUpdateDTO.getTelefono());
+	         
+	         // Verificar si se proporciona una nueva contraseña
+	         if (userUpdateDTO.getContrasena() != null && !userUpdateDTO.getContrasena().isEmpty()) {
+	             usuario.setPassword(userUpdateDTO.getContrasena());
+	         }
+	         
+	         usuario.setDni(userUpdateDTO.getDni());
+	         usuario.setUsername(userUpdateDTO.getUsername());
+	         usuario.setSobreMi(userUpdateDTO.getSobreMi());
+	         
+	         Usuario updatedUsuario = usuarioRepository.save(usuario);
+	       
 
-	        usuarioRepository.save(usuario);
-
-	        return ResponseEntity.ok("Usuario actualizado correctamente");
-	    }).orElseGet(() -> ResponseEntity.notFound().build());
-	}
+	         return ResponseEntity.ok().body(updatedUsuario); // Devuelve el usuario completo
+	     }).orElseGet(() -> ResponseEntity.notFound().build());
+	 }
 }
