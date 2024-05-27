@@ -33,9 +33,15 @@ public class ItinerarioServiceImplMy8Jpa implements ItinerarioService{
 	}
 
 	@Override
-	public Itinerario getItinerarioByIdGuia(int idGuia) {
+	public Itinerario getItinerarioByUsuarioId(int idUsuario) {
 		
-		return itinerarioRepository.getItinerarioByIdGuia(idGuia);
+		return itinerarioRepository.getItinerarioByUsuarioId(idUsuario);
+	}
+
+	@Override
+	public Itinerario insertOne(Itinerario itinerario) {
+
+		return itinerarioRepository.save(itinerario);
 	}
 
 	

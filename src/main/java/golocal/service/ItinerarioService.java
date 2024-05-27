@@ -10,5 +10,6 @@ public interface ItinerarioService {
 	List<Itinerario> findByCiudadPaisYFecha(String nombreCiudad, String nombrePais,
 											Date fechaDisponible);
 	Itinerario findById(int idItinerario);
-	Itinerario getItinerarioByIdGuia(int idGuia);
+	Itinerario getItinerarioByUsuarioId(int idUsuario);
+	Itinerario insertOne(Itinerario itinerario);
 }

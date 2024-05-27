@@ -17,8 +17,8 @@ public interface ItinerarioRepository extends JpaRepository<Itinerario, Integer>
 		                                         @Param("nombrePais") String nombrePais,
 		                                         @Param("fechaDisponible") Date fechaDisponible);
 
-	@Query("SELECT i FROM Itinerario i WHERE i.guia.idGuia = :idGuia")
-	Itinerario getItinerarioByIdGuia(int idGuia);
+	@Query("SELECT i FROM Itinerario i WHERE i.guia.usuario.idUsuario = :idUsuario")
+	Itinerario getItinerarioByUsuarioId(int idUsuario);
 
 
 

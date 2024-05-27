@@ -8,8 +8,11 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import golocal.modelo.entity.Itinerario;
 import golocal.repository.ItinerarioRepository;
 import golocal.service.ItinerarioService;
@@ -36,7 +39,7 @@ public class ItinerarioRestController {
 	        @PathVariable("nombreCiudad") String nombreCiudad,
 	        @PathVariable("nombrePais") String nombrePais,
 	        @PathVariable("fechaDisponible") @DateTimeFormat(pattern="yyyy-MM-dd") Date fechaDisponible) {
-	    return itinerarioRepository.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
+	    return itinerarioService.findByCiudadPaisYFecha(nombreCiudad, nombrePais, fechaDisponible);
 	}
 	
 	@GetMapping("/{id}")
@@ -45,13 +48,16 @@ public class ItinerarioRestController {
 		return itinerarioService.findById(idItinerario);
 	}
 	
-	@GetMapping("/byGuia/{id}")
-	public Itinerario byGuiaId(@PathVariable("id") int idGuia) {
+	@GetMapping("/byUsuario/{id}")
+	public Itinerario byUsuarioaId(@PathVariable("id") int idGuia) {
 		
-		return itinerarioService.getItinerarioByIdGuia(idGuia);
+		return itinerarioService.getItinerarioByUsuarioId(idGuia);
 	}
 	
-	
+	@PostMapping("/alta")
+	public Itinerario insertOne(@RequestBody Itinerario itinerario) {
+		return itinerarioService.insertOne(itinerario);
+	}
 	
 	
 
