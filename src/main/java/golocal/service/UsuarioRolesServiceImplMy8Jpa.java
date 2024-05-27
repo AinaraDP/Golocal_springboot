@@ -1,5 +1,7 @@
 package golocal.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +15,9 @@ public class UsuarioRolesServiceImplMy8Jpa implements UsuarioRolesService{
 	UsuarioRolesRepository usuarioRolesRepository;
 
 	@Override
-	public UsuarioRoles findByIdUsuario(int idUsuario) {
+	public List<String> findRolesByUserId(int idUsuario) {
 
-		return usuarioRolesRepository.findByUsuarioIdUsuario(idUsuario);
+		return usuarioRolesRepository.findRolesByUserId(idUsuario);
 	}
-	
 
 }
