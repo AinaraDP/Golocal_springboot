@@ -11,5 +11,6 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 	
 	 @Query("SELECT r FROM Reserva r WHERE r.cliente.idCliente = :idCliente")
 	 List<Reserva> findAllByClienteId(int idCliente);
+	 
 
 }
