@@ -27,7 +27,7 @@ public class ReservaRestController {
 	}
 	
 	@DeleteMapping("/borrar/{id}")
-	public void deleteByid(int idReserva) {
+	public void deleteByid(@PathVariable("id")int idReserva) {
 		reservaService.borrarReserva(idReserva);	
 	}
 	
