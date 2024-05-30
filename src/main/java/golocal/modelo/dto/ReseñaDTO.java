@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ReviewDTO {
-	   private double puntuacion;
-	    private String contenido;
-	    private String nombreCliente;
+public class ReseñaDTO {
+	private double puntuacion;
+	private String contenido;
+	private String nombreCliente;
 }

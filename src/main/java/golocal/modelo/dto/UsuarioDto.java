@@ -1,7 +1,6 @@
 package golocal.modelo.dto;
 
 import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,8 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class UsuarioDto {
 	private int idUsuario;
-    private String username;
-    private String password;
-    private List<String> roles;
-	
+	private String username;
+	private String password;
+	private List<String> roles;
+
 }

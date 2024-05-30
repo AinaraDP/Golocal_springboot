@@ -1,7 +1,5 @@
 package golocal.modelo.dto;
 
-
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

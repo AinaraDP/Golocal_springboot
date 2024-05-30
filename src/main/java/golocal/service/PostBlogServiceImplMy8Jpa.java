@@ -1,10 +1,8 @@
 package golocal.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import golocal.modelo.entity.PostBlog;
 import golocal.repository.PostBlogRepository;
 
@@ -23,5 +21,4 @@ public class PostBlogServiceImplMy8Jpa implements PostBlogService {
 	public PostBlog findByPostId(int postId) {
 		return postBlogRepository.findById(postId).orElse(null);
 	}
-	
 }
