@@ -373,6 +373,8 @@ INSERT INTO Itinerarios (id_guia, id_ciudad, descripcion, duracion, fecha_dispon
 (43, 10, 'Tour nocturno por los bares y restaurantes de Monterrey', 4, '2024-10-15', 25, 70, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1),
 (44, 10, 'Degustación de cabrito y cerveza artesanal', 2.5, '2024-10-15', 12, 80, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1);
 
+
+ALTER TABLE Reseñas AUTO_INCREMENT = 1;
 INSERT INTO Reseñas (id_itinerario, id_cliente, id_guia, puntuacion, fecha, contenido) VALUES 
 (1, 1, 1, 4.5, '2024-06-15', 'Excelente tour, muy informativo y entretenido. El guía tenía un conocimiento profundo y siempre estuvo dispuesto a responder preguntas. Recomendado para quienes quieran una experiencia completa.'),
 (2, 2, 3, 4.0, '2024-06-20', 'Muy buena experiencia, el guía fue muy amable. La interacción con los visitantes fue excelente y las explicaciones claras y concisas.'),
@@ -395,25 +397,52 @@ INSERT INTO Reseñas (id_itinerario, id_cliente, id_guia, puntuacion, fecha, con
 (19, 12, 1, 5.0, '2024-09-20', 'Una experiencia increíble con un guía excepcional. Recomiendo este tour a cualquiera que quiera aprender más sobre la historia local.'),
 (20, 13, 2, 4.3, '2024-09-25', 'Buena experiencia en general, aunque algunas partes podrían mejorarse. El guía fue muy amable y conocedor.');
 
-INSERT INTO Reseñas (id_itinerario, id_cliente, id_guia, puntuacion, fecha, contenido) VALUES 
-(1, 1, 1, 4.5, '2024-06-15', 'Excelente tour, muy informativo y entretenido. El guía tenía un conocimiento profundo y siempre estuvo dispuesto a responder preguntas. Recomendado para quienes quieran una experiencia completa.'),
-(2, 2, 3, 4.0, '2024-06-20', 'Muy buena experiencia, el guía fue muy amable. La interacción con los visitantes fue excelente y las explicaciones claras y concisas.'),
-(3, 3, 1, 5.0, '2024-07-01', '¡Increíble! La mejor visita guiada que he tenido. El guía realmente sabe cómo hacer que la historia cobre vida. Lo recomendaría a cualquiera.'),
-(4, 2, 2, 3.5, '2024-07-05', 'Buena experiencia, aunque podría haber sido más larga. Algunas partes se sintieron un poco apresuradas, pero en general fue agradable.'),
-(5, 1, 3, 4.8, '2024-07-10', 'Muy interesante y bien organizado. El guía fue muy atento y profesional, y logró mantener el interés del grupo durante todo el recorrido.'),
-(6, 3, 4, 4.3, '2024-07-15', 'El guía conocía mucho sobre la historia local. Sus explicaciones fueron detalladas y enriquecedoras.'),
-(7, 2, 2, 5.0, '2024-07-20', 'Fantástico tour, muy recomendable. El guía fue muy apasionado y eso se notó en cada detalle de su explicación.'),
-(8, 1, 3, 4.7, '2024-07-25', 'Disfruté mucho la visita, aprendí mucho. El guía fue muy dinámico y supo mantener la atención del grupo.'),
-(9, 3, 4, 4.2, '2024-08-01', 'Buena experiencia, aunque esperaba más lugares para visitar. Aún así, el guía hizo un gran trabajo.'),
-(10, 2, 4, 4.9, '2024-08-05', 'Excelente recorrido, el guía fue muy profesional. Su conocimiento y amabilidad hicieron de esta una experiencia memorable.'),
-(11, 4, 1, 4.6, '2024-08-10', 'El tour fue excelente y el guía muy experimentado. Las historias y anécdotas que compartió realmente añadieron valor a la experiencia.'),
-(12, 5, 2, 4.4, '2024-08-15', 'Un tour muy agradable con un guía muy informado. Disfruté especialmente las visitas a los sitios históricos.'),
-(13, 6, 3, 5.0, '2024-08-20', '¡Fantástico! No tengo nada negativo que decir. El guía fue excepcional y el recorrido muy completo.'),
-(14, 7, 4, 4.5, '2024-08-25', 'El guía hizo un trabajo maravilloso al mantener a todos interesados. Sus conocimientos y carisma hicieron del tour una gran experiencia.'),
-(15, 8, 1, 4.8, '2024-08-30', 'Excelente tour, muy bien organizado. El guía fue muy amable y siempre dispuesto a ayudar.'),
-(16, 9, 2, 4.9, '2024-09-05', 'Increíble experiencia, el guía fue muy apasionado y eso se notó en cada explicación.'),
-(17, 10, 3, 4.7, '2024-09-10', 'Muy buen tour, el guía fue muy profesional y supo manejar el grupo con gran habilidad.'),
-(18, 11, 4, 4.6, '2024-09-15', 'El guía fue muy informativo y el tour muy bien estructurado. Me gustó mucho la forma en que explicó la historia detrás de cada lugar.'),
-(19, 12, 1, 5.0, '2024-09-20', 'Una experiencia increíble con un guía excepcional. Recomiendo este tour a cualquiera que quiera aprender más sobre la historia local.'),
-(20, 13, 2, 4.3, '2024-09-25', 'Buena experiencia en general, aunque algunas partes podrían mejorarse. El guía fue muy amable y conocedor.');
+ALTER TABLE Reservas AUTO_INCREMENT = 1;
+-- Insertar reservas
+INSERT INTO Reservas (id_itinerario, id_cliente, fecha) VALUES 
+(1, 1, '2024-06-10'),
+(2, 1, '2024-06-15'),
+(3, 2, '2024-06-20'),
+(4, 2, '2024-06-25'),
+(5, 3, '2024-06-30'),
+(6, 4, '2024-07-01'),
+(7, 5, '2024-07-05'),
+(8, 5, '2024-07-10'),
+(9, 5, '2024-07-15'),
+(10, 6, '2024-07-20'),
+(11, 6, '2024-07-25'),
+(12, 6, '2024-08-01'),
+(13, 6, '2024-08-05'),
+(14, 7, '2024-08-10'),
+(15, 8, '2024-08-15'),
+(16, 8, '2024-08-20'),
+(17, 8, '2024-08-25'),
+(18, 8, '2024-08-30'),
+(19, 8, '2024-09-01'),
+(20, 9, '2024-09-05'),
+(21, 9, '2024-09-10'),
+(22, 10, '2024-09-15'),
+(23, 10, '2024-09-20'),
+(24, 11, '2024-09-25'),
+(25, 12, '2024-09-30'),
+(26, 13, '2024-10-05'),
+(27, 14, '2024-10-10'),
+(28, 15, '2024-10-15'),
+(29, 15, '2024-10-20'),
+(30, 16, '2024-10-25'),
+(31, 16, '2024-10-30'),
+(32, 17, '2024-11-01'),
+(33, 18, '2024-11-05'),
+(34, 18, '2024-11-10'),
+(35, 19, '2024-11-15'),
+(36, 19, '2024-11-20'),
+(37, 20, '2024-11-25'),
+(38, 20, '2024-11-30'),
+(39, 20, '2024-12-05'),
+(40, 21, '2024-12-10'),
+(41, 22, '2024-12-15'),
+(42, 23, '2024-12-20'),
+(43, 24, '2024-12-25'),
+(44, 25, '2024-12-30');
+
 
