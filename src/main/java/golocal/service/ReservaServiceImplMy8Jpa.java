@@ -29,4 +29,9 @@ public class ReservaServiceImplMy8Jpa implements ReservaService {
 		
 	}
 
+	@Override
+	public List<Reserva> findAll() {
+		return reservaRepository.findAll();
+	}
+
 }
