@@ -30,6 +30,11 @@ public class ReservaRestController {
 	public List<Reserva> findByIdCliente(@PathVariable("id") int idCliente) {
 		return reservaService.findByIdCliente(idCliente);
 	}
+	
+	@GetMapping("/todos")
+	public List<Reserva> findAllReservas(){
+		return reservaService.findAll();
+	}
 
 	/**
 	 * Maneja la solicitud DELETE para eliminar una reserva por su identificador.
