@@ -21,8 +21,10 @@ PRIMARY KEY (id_usuario)
 );
 
 CREATE TABLE Usuario_roles (
+id_usuario_roles int NOT NULL AUTO_INCREMENT,
 id_rol int NOT NULL,
 id_usuario int NOT NULL,
+PRIMARY KEY (id_usuario_roles),
 FOREIGN KEY (id_usuario) REFERENCES `usuarios`(id_usuario),
 FOREIGN KEY (id_rol) REFERENCES `roles`(id_rol)
 );
@@ -139,8 +141,27 @@ FOREIGN KEY (id_cliente) REFERENCES `Clientes`(id_cliente),
 FOREIGN KEY (id_guia) REFERENCES `Guias`(id_guia)
 );
 
--- create user u_golocal_BBDD identified by 'ugolocal';
--- grant all privileges on go_local.* to u_golocal_BBDD;
+create user u_golocal_BBDD identified by 'ugolocal';
+grant all privileges on go_local.* to u_golocal_BBDD;
 
+-- borrar datos de las tablas
+-- SET FOREIGN_KEY_CHECKS = 0;
+-- SET SQL_SAFE_UPDATES = 0;
+
+-- DELETE FROM reseñas;
+-- DELETE FROM reservas;
+-- DELETE FROM itinerarios;
+-- DELETE FROM pueblos;
+-- DELETE FROM ciudades;
+-- DELETE FROM paises;
+-- DELETE FROM post_blog;
+-- DELETE FROM Guias;
+-- DELETE FROM Clientes;
+-- DELETE FROM Roles;
+-- DELETE FROM usuario_roles;
+-- DELETE FROM Admins;
+-- DELETE FROM Usuarios;
+
+-- SET FOREIGN_KEY_CHECKS = 1;
 
 -- DROP DATABASE go_local;

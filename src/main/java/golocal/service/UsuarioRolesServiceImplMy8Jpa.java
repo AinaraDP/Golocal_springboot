@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import golocal.modelo.entity.UsuarioRoles;
 import golocal.repository.UsuarioRolesRepository;
 
 @Service
