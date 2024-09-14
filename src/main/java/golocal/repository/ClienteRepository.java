@@ -5,4 +5,5 @@ import golocal.modelo.entity.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer>{
 
+
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,42 +54,30 @@ public class ReservaRestController {
 		reservaService.borrarReserva(idReserva);	
 	}
 	
-	@PostMapping("/crear/{idItinerario}/{idUsuario}")
-	public ResponseEntity<Reserva> crearReserva(@PathVariable int idItinerario, int idUsuario) {
-	    // Obtener el usuario autenticado
-	    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-	    String username;
-	    if (principal instanceof UserDetails) {
-	        username = ((UserDetails) principal).getUsername();
-	    } else {
-	        username = principal.toString();
-	    }
+	@PostMapping("/crearNueva")
+    public ResponseEntity<?> crearReserva(@RequestBody Reserva reserva) {
+        // Verificar que el cliente asociado existe
+        Cliente cliente = clienteService.findByIdUsuario(reserva.getCliente().getIdCliente());
+        if (cliente == null) {
+            return ResponseEntity.status(400).body("Cliente no encontrado");
+        }
+        
+        // Verificar que el itinerario asociado existe
+        Itinerario itinerario = reserva.getItinerario(); 
+        if (itinerario == null || itinerario.getIdItinerario() == 0) {
+            return ResponseEntity.status(400).body("Itinerario no válido");
+        }
+        
 
-	    // Buscar el usuario por nombre de usuario
-	    Usuario usuario = usuarioService.findByUsername(username);
-	    if (usuario == null) {
-	        return ResponseEntity.status(401).build(); // Unauthorized
-	    }
+        // Crear la reserva
+        reserva.setCliente(cliente);
+        reserva.setItinerario(itinerario);
+        Reserva nuevaReserva = reservaService.crearReserva(itinerario, cliente);
 
-	    // Buscar el cliente asociado al usuario
-	    Cliente cliente = clienteService.findByIdUsuario(usuario.getIdUsuario());
-	    if (cliente == null) {
-	        return ResponseEntity.status(400).build(); // Bad Request
-	    }
+        return ResponseEntity.ok(nuevaReserva);
+    }
 
-	    // Buscar el itinerario
-	    Itinerario itinerario = itinerarioService.findById(idItinerario);
-	    if (itinerario == null) {
-	        return ResponseEntity.badRequest().build();
-	    }
 
-	    // Obtener la fecha del itinerario
-	    Date fechaItinerario = itinerario.getFechaDisponible();
-
-	    // Crear la reserva con el cliente y la fecha del itinerario
-	    Reserva reserva = reservaService.crearReserva(itinerario, cliente);
-	    return ResponseEntity.ok(reserva);
-	}
 
 
 	

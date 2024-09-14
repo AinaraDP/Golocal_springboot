@@ -26,15 +26,26 @@ public class FilterChainConfiguration {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(authorize -> authorize
-						.requestMatchers("/login", "/logout", "/**", "/reserva/crear").permitAll()
-						.requestMatchers("/publicar-ruta").hasAnyAuthority("ROL_GUIA", "ROL_ADMIN")
-						
-						)
-				;
-		return http.build();
+	    http.csrf(csrf -> csrf.disable())
+	        .authorizeHttpRequests(authorize -> authorize
+	            .requestMatchers("/login", "/logout", "/reserva/crearNueva").permitAll()
+	            .requestMatchers("/itinerario/**").permitAll()  // Permitir acceso sin autenticación a itinerarios
+	            .requestMatchers("/clientes/**").permitAll()  // Permitir acceso sin autenticación a clientes
+	            .requestMatchers("/guia/**").permitAll()
+	            .requestMatchers("/blog/**").permitAll()
+	            .requestMatchers("/reserva/**").permitAll()
+	        	.requestMatchers("/review/**").permitAll()
+	        	.requestMatchers("/usuarioRoles/rol/**").permitAll()
+	        	
+	        	.requestMatchers("/user-profile/**").permitAll()
+	            .requestMatchers("/publicar-ruta").hasAnyAuthority("ROL_GUIA", "ROL_ADMIN")
+	            .anyRequest().authenticated()
+	        );
+	    return http.build();
 	}
+	
+	
+
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
