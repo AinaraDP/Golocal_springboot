@@ -1,9 +1,18 @@
 package golocal.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import golocal.modelo.dto.ReviewDTO;
+import golocal.repository.ReseñaRepository;
 import java.util.List;
-import golocal.modelo.dto.ReseñaDTO;
 
-public interface ReseñaService {
+@Service
+public class ReseñaService {
 
-	List<ReseñaDTO> getReseñasByGuiaId(int idGuia);
+    @Autowired
+    private ReseñaRepository reseñaRepository;
+
+    public List<ReviewDTO> getReseñasByGuiaId(int idGuia) {
+        return reseñaRepository.findReseñasByGuiaId(idGuia);
+    }
 }

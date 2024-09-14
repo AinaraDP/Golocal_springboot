@@ -43,18 +43,29 @@ public class FilterChainConfiguration {
      */
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(authorize -> authorize
-						.requestMatchers("/**").permitAll()
-						)
-				;
-		return http.build();
+	    http.csrf(csrf -> csrf.disable())
+	        .authorizeHttpRequests(authorize -> authorize
+	            .requestMatchers("/login", "/logout", "/reserva/crearNueva").permitAll()
+	            .requestMatchers("/itinerario/**").permitAll()  // Permitir acceso sin autenticación a itinerarios
+	            .requestMatchers("/clientes/**").permitAll()  // Permitir acceso sin autenticación a clientes
+	            .requestMatchers("/guia/**").permitAll()
+	            .requestMatchers("/blog/**").permitAll()
+	            .requestMatchers("/reserva/**").permitAll()
+	        	.requestMatchers("/review/**").permitAll()
+	        	.requestMatchers("/usuarioRoles/rol/**").permitAll()
+	        	
+	        	.requestMatchers("/user-profile/**").permitAll()
+	            .requestMatchers("/publicar-ruta").hasAnyAuthority("ROL_GUIA", "ROL_ADMIN")
+	            .anyRequest().authenticated()
+	        );
+	    return http.build();
 	}
-	/**
-     * Define el codificador de contraseñas utilizado en la aplicación.
-     *
-     * @return una instancia de BCryptPasswordEncoder
-     */
+	
+	
+
+	
+
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
