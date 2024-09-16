@@ -2,7 +2,6 @@ package golocal.restcontroller;
 
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import golocal.modelo.entity.Cliente;
 import golocal.modelo.entity.Itinerario;
 import golocal.modelo.entity.Reserva;
@@ -29,7 +27,7 @@ import golocal.service.UsuarioService;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/reserva")
 public class ReservaRestController {
-	
+
 	@Autowired
 	ReservaService reservaService;
 	
@@ -43,17 +41,33 @@ public class ReservaRestController {
 	ItinerarioService itinerarioService;
 	
 
-	
+	/**
+	 * Maneja la solicitud GET para obtener las reservas por el identificador de un
+	 * cliente en específico
+	 *
+	 * @param idCliente identificador del cliente del que se quiere obtener las reservas
+	 * @return Una lista de las reservas obtenidas por la búsqueda del idCliente
+	 */
 	@GetMapping("/buscar/{id}")
 	public List<Reserva> findByIdCliente(@PathVariable("id") int idCliente) {
 		return reservaService.findByIdCliente(idCliente);
 	}
 	
-	@DeleteMapping("/borrar/{id}")
-	public void deleteByid(@PathVariable("id")int idReserva) {
-		reservaService.borrarReserva(idReserva);	
+	@GetMapping("/todos")
+	public List<Reserva> findAllReservas(){
+		return reservaService.findAll();
 	}
-	
+
+	/**
+	 * Maneja la solicitud DELETE para eliminar una reserva por su identificador.
+	 *
+	 * @param idReserva el ID de la reserva que se quiere eliminar
+	 */
+	@DeleteMapping("/borrar/{id}")
+	public void deleteByid(@PathVariable("id") int idReserva) {
+		reservaService.borrarReserva(idReserva);
+	}
+
 	@PostMapping("/crearNueva")
     public ResponseEntity<?> crearReserva(@RequestBody Reserva reserva) {
         // Verificar que el cliente asociado existe
@@ -77,8 +91,4 @@ public class ReservaRestController {
         return ResponseEntity.ok(nuevaReserva);
     }
 
-
-
-
-	
 }

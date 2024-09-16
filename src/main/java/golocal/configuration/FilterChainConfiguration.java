@@ -16,6 +16,15 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class FilterChainConfiguration {
 
+	/**
+     * Configura la autenticación mediante múltiples instancias de UserDetailsManager.
+     *
+     * @param auth  el AuthenticationManagerBuilder es el encargado de construir el 
+     * 		  el administrador de autenticación
+     * @param clientesUserDetailsManager UserDetailsManager para usuarios clientes
+     * @param guiasUserDetailsManager    UserDetailsManager para usuarios guías
+     * @param adminsUserDetailsManager   UserDetailsManager para usuarios administradores
+     */
 	@Autowired
     public void configure(AuthenticationManagerBuilder auth, UserDetailsManager clientesUserDetailsManager,
                           UserDetailsManager guiasUserDetailsManager, UserDetailsManager adminsUserDetailsManager) throws Exception {
@@ -24,6 +33,14 @@ public class FilterChainConfiguration {
         auth.userDetailsService(adminsUserDetailsManager);
     }
 	
+	
+	/**
+     * Configura los ajustes de seguridad HTTP y los permisos de las URLs
+     *
+     * @param http la instancia de HttpSecurity utilizada para configurar la seguridad basada en web
+     * @return una instancia de SecurityFilterChain configurada con HttpSecurity
+     * @throws Exception si ocurre un error al configurar la seguridad HTTP
+     */
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 	    http.csrf(csrf -> csrf.disable())
@@ -47,6 +64,8 @@ public class FilterChainConfiguration {
 	
 
 	
+
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
