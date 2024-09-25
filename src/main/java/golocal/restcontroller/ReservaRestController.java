@@ -1,11 +1,8 @@
 package golocal.restcontroller;
 
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import golocal.modelo.entity.Cliente;
 import golocal.modelo.entity.Itinerario;
 import golocal.modelo.entity.Reserva;
-import golocal.modelo.entity.Usuario;
 import golocal.service.ClienteService;
 import golocal.service.ItinerarioService;
 import golocal.service.ReservaService;
