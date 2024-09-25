@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import golocal.modelo.dto.ReviewDTO;
-import golocal.modelo.dto.ReseñaDTO;
 import golocal.service.ReseñaService;
 
 @RestController
