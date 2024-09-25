@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class ReviewDTO {
 	private double puntuacion;
-	private String ciudad;
-	private String pais;
 	private String idioma;
 	private String contenido;
 }

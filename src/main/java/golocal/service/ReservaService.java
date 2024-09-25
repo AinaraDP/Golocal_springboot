@@ -11,5 +11,6 @@ public interface ReservaService {
 	List<Reserva> findByIdCliente(int idCliente);
 	Reserva crearReserva(Itinerario itinerario, Cliente cliente);
 	void borrarReserva(int idReserva);
+	List<Reserva> findAll();
 
 }
