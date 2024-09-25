@@ -6,7 +6,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import golocal.modelo.entity.Cliente;
 import golocal.modelo.entity.Itinerario;
 import golocal.modelo.entity.Reserva;
@@ -43,6 +42,11 @@ public class ReservaServiceImplMy8Jpa implements ReservaService {
 	public void borrarReserva(int idReserva) {
 		reservaRepository.deleteById(idReserva);
 		
+	}
+
+	@Override
+	public List<Reserva> findAll() {
+		return reservaRepository.findAll();
 	}
 
 }

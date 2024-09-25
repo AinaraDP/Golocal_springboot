@@ -1,11 +1,9 @@
 package golocal.repository;
 
 import java.util.List;
-import java.util.Optional;
-
+import java.util.Optional
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
 import golocal.modelo.entity.Cliente;
 import golocal.modelo.entity.Itinerario;
 import golocal.modelo.entity.Reserva;
@@ -16,6 +14,5 @@ public interface ReservaRepository extends JpaRepository<Reserva, Integer> {
 	 List<Reserva> findAllByClienteId(int idCliente);
 	 
 	 Optional<Reserva> findByClienteAndItinerario(Cliente cliente, Itinerario itinerario);
-	 
 
 }

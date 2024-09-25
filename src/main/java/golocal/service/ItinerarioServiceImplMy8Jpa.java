@@ -2,7 +2,6 @@ package golocal.service;
 
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import golocal.modelo.entity.Itinerario;
@@ -27,19 +26,8 @@ public class ItinerarioServiceImplMy8Jpa implements ItinerarioService{
 	}
 
 	@Override
-	public Itinerario findById(int idItinerario) {
-
-		return itinerarioRepository.findById(idItinerario).orElse(null);
-	}
-
-	@Override
 	public Itinerario getItinerarioByIdGuia(int idGuia) {
 		
 		return itinerarioRepository.getItinerarioByIdGuia(idGuia);
 	}
-
-	
-
-	
-
 }
