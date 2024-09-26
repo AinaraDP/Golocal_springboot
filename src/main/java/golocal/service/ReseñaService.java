@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface ReseñaService {
 
+    List<ReviewDTO> getReseñasByGuiaId(int idGuia);
 
-    public List<ReviewDTO> getReseñasByGuiaId(int idGuia);
 }
