@@ -12,4 +12,5 @@ public class ReviewDTO {
     private String contenido;
     private String nombreCliente;
     private String nombreCiudad;
+    private String nombrePais;
 }
