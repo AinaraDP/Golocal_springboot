@@ -8,7 +8,7 @@ import golocal.modelo.entity.Reseña;
 
 
 public interface ReseñaRepository extends JpaRepository<Reseña, Integer>{
-	 @Query("SELECT new golocal.modelo.dto.ReviewDTO(r.puntuacion, r.contenido, c.usuario.nombre) " +
+	 @Query("SELECT new golocal.modelo.dto.ReviewDTO(r.puntuacion, r.contenido, c.usuario.nombre, r.itinerario.ciudad.nombreCiudad) " +
 	           "FROM Reseña r JOIN r.cliente c WHERE r.guia.idGuia = :idGuia")
 	    List<ReviewDTO> findReseñasByGuiaId(int idGuia);
 }
